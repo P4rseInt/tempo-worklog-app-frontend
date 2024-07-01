@@ -1,0 +1,18 @@
+<div style="align-content: center;">
+ <form [formGroup]="formGroup">
+  <mat-form-field style="margin-left: 10%; margin-top: 10%;">
+   <mat-label>% Completado</mat-label>
+   <select matNativeControl required formControlName="porcentajeCompletado">
+    <option *ngFor="let porcentaje of porcentajeCompletado" [value]="porcentaje">
+     {{porcentaje}}
+    </option>
+   </select>
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 10%; margin-top: 0%;">
+   <mat-label>Notas</mat-label>
+   <input matInput type="text" formControlName="notas">
+  </mat-form-field>
+ </form>
+</div>
+<button (click)="saveChanges()" style="margin-left: 40%;" mat-raised-button color="primary">OK</button>
