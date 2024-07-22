@@ -61,10 +61,10 @@ export class TaskTableComponent implements OnInit {
   }
 
   async sendWorkLog() {
-    const destinatario = 'lealsebastian12345@gmail.com'
+    const destinatario = 'alejandra.suarez@sermaluc.cl' //'lealsebastian12345@gmail.com'
     const workLogs = this.workLogs;
     const res = await this.worklogsService.sendWorkLogs(destinatario, workLogs);
-    if (res.response.includes('OK')) {
+    if (res?.response?.includes('OK')) {
       alert('Se enviaron los registros de trabajo');
     } else {
       alert('Ha ocurrido un error');

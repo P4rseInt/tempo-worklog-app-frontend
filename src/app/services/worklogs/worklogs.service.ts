@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { WorklogsModel } from "../../models/worklogs.model";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {WorklogsModel} from "../../models/worklogs.model";
 
 @Injectable({
   providedIn: 'root'
@@ -30,16 +30,15 @@ export class WorklogsService {
       this.httpClient.post('http://localhost:3000/mails/send-worklog', {
         destinatario: destinatario,
         editedWorkLogs: workLogs
-      })
-        .subscribe(
-          {
-            next: resp => {
-              resolve(resp);
-            },
-            error: err => {
-              console.log(err);
-            }
-          });
+      }).subscribe(
+        {
+          next: resp => {
+            resolve(resp);
+          },
+          error: err => {
+            console.log(err);
+          }
+        });
     });
   }
 }
